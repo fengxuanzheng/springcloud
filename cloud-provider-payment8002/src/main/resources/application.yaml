@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.14.157.131:3306/mybatis
+    username: uog
+    password: 820606
+  rabbitmq:
+    host: 1.14.157.131
+    username: admin
+    password: 820606
+  redis:
+    host: 1.14.157.131
+    password: 820606
+  application:
+    name: 'cloud-provider-payment'
+
+mybatis-plus:
+  mapper-locations: classpath:/mybatisPlus/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8002
+
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: payment2
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 2
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+     defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+

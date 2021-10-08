@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: 'cloud-consumerConsul-order82'
+  cloud:
+    consul:
+      host: 1.14.157.131
+      discovery:
+        heartbeat:
+          enabled: true
+        service-name: ${spring.application.name}
+        prefer-agent-address: true
+        prefer-ip-address: true
+
+server:
+  port: 82
+
+
+

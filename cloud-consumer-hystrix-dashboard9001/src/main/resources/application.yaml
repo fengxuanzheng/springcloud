@@ -1,0 +1,10 @@
+
+
+server:
+  port: 9001
+hystrix:
+  dashboard:
+    enable-ignore-connection-close-header: true
+    proxy-stream-allow-list:
+      localhost
+

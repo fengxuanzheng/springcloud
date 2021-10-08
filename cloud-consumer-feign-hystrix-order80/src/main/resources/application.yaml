@@ -1,0 +1,43 @@
+
+
+server:
+  port: 80
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    healthcheck:
+      enabled: false
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+spring:
+  application:
+    name: 'cloud-consumer-feign-hystrix-order80'
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 30000
+        ConnectTimeOut: 30000
+        loggerLevel: FULL
+  circuitbreaker:
+    enabled: true
+logging:
+  level:
+   com.cloudconsumerfeignorder83.server.OpenFeigServer: DEBUG
+hystrix:
+ command:
+  default:
+   execution:
+    isolation:
+     thread:
+      timeoutInMilliseconds: 2000
+
+
+
+
+
