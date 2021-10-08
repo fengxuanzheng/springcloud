@@ -12,7 +12,19 @@ spring:
             - springcloud
           username: fengxuanzheng@sina.com
           password: feng820606
-      label:  master
+          default-label: master
+        bootstrap: true
+
+  rabbitmq:
+    host: 1.14.157.131
+    username: admin
+    password: 820606
+management:
+ endpoints:
+   web:
+     exposure:
+       include: "*"
+
 
 eureka:
   instance:

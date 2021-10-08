@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      name:  application
+      profile: dev
+      label: master
+    #  uri:
+     #   - http://localhost:3344  可以在application.yaml中通过spring.config.import=optional:configserver:xxxxxx,指定配置服务器

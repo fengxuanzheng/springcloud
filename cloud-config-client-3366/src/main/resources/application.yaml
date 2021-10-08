@@ -1,0 +1,37 @@
+server:
+  port: 3366
+spring:
+
+  rabbitmq:
+    host: 1.14.157.131
+    username: admin
+    password: 820606
+  application:
+    name: cloud-config-center-3366
+  cloud:
+      config:
+        name: application
+        profile: dev
+        label: master
+
+management:
+  endpoints:
+    web:
+      exposure:
+       include: "*"
+
+
+
+eureka:
+  instance:
+    instance-id: config
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 2
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+
+
