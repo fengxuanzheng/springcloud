@@ -1,6 +1,6 @@
 spring:
   application:
-    name: nacos-config-client
+    name: cloudalibabasentinelserviceuse8401
   cloud:
     nacos:
       discovery:
@@ -8,5 +8,5 @@ spring:
       config:
         server-addr: 1.14.157.131:8848 #配置中心地址
         file-extension: yaml #指定yaml格式的配置
-        group: DEV_GROUP
-        namespace: c3bdf97a-62d4-4f76-945d-aa49b29cfef9
+       # group: DEV_GROUP
+        #namespace: c3bdf97a-62d4-4f76-945d-aa49b29cfef9

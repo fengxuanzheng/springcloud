@@ -1,0 +1,53 @@
+server:
+  port: 2002
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8088
+        port: 8719
+  datasource:
+    username: uog
+    password: 820606
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.14.157.131:3306/seata_storage
+feign:
+  sentinel:
+    enabled: true
+
+
+management:
+  endpoints:
+    sentinel:
+      enable: true
+    web:
+      exposure:
+        include: '*'
+mybatis-plus:
+  mapper-locations: classpath:/mybatisPlus/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    io:
+      seata: info
+
+seata:
+  registry:
+    nacos:
+      server-addr: 1.14.157.131:8848
+      application: seata-server
+      username: nacos
+      password: nacos
+      group: "SEATA_GROUP"
+    type: nacos
+  config:
+    nacos:
+     server-addr: 1.14.157.131:8848
+     group: "SEATA_GROUP"
+     username: "nacos"
+     password: "nacos"
+    type: nacos
+  tx-service-group: seata-order-service2001
+debug: true

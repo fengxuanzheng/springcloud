@@ -1,0 +1,24 @@
+server:
+  port: 8401
+
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8088
+        port: 8719
+
+
+
+    nacos:
+      discovery:
+        server-addr: 1.14.157.131:8848 #配置Nacos地址
+
+management:
+  endpoints:
+    sentinel:
+      enable: true
+    web:
+      exposure:
+        include: '*'
+

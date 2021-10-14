@@ -1,0 +1,28 @@
+server:
+  port: 84
+
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 1.14.157.131:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8088
+        port: 8719
+
+service-url:
+  nacos-user-service: http://nacos-payment-provider
+
+feign:
+  sentinel:
+    enabled: true
+  client:
+    config:
+      default:
+        #readTimeout: 2000
+        #ConnectTimeOut: 2000
+        loggerLevel: FULL
